@@ -99,7 +99,7 @@ public class ConditionEvaluator {
 		Predicate<Object> isActivated = conditionIsActivated(configurationParameters);
 
 		// @formatter:off
-		return extensionRegistry.stream(extensionType)
+		return extensionRegistry.streamExtensions(extensionType)
 				.filter(isActivated)
 				.map(condition -> evaluateAdaptor.apply(condition, context))
 				.filter(ConditionEvaluationResult::isDisabled)

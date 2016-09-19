@@ -126,7 +126,7 @@ public class ExtensionRegistryTests {
 	}
 
 	private long countExtensions(ExtensionRegistry registry, Class<? extends Extension> extensionType) {
-		return registry.stream(extensionType).count();
+		return registry.streamExtensions(extensionType).count();
 	}
 
 	private void assertExtensionRegistered(ExtensionRegistry registry, Class<? extends Extension> extensionType) {

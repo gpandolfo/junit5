@@ -180,7 +180,7 @@ public class ExecutableInvoker {
 
 		try {
 			// @formatter:off
-			List<ParameterResolver> matchingResolvers = extensionRegistry.stream(ParameterResolver.class)
+			List<ParameterResolver> matchingResolvers = extensionRegistry.streamExtensions(ParameterResolver.class)
 					.filter(resolver -> resolver.supports(parameterContext, extensionContext))
 					.collect(toList());
 			// @formatter:on

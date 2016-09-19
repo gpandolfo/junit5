@@ -193,7 +193,7 @@ public class ClassTestDescriptor extends JupiterTestDescriptor {
 	protected void invokeTestInstancePostProcessors(Object instance, ExtensionRegistry registry,
 			ExtensionContext context) {
 
-		registry.stream(TestInstancePostProcessor.class).forEach(
+		registry.streamExtensions(TestInstancePostProcessor.class).forEach(
 			extension -> executeAndMaskThrowable(() -> extension.postProcessTestInstance(instance, context)));
 	}
 
